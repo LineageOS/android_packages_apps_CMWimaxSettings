@@ -80,7 +80,7 @@ public class WimaxEnabler implements Preference.OnPreferenceChangeListener {
         mWimaxCheckBoxPref = wimaxCheckBoxPreference;
         if (WimaxHelper.isWimaxSupported(context)) {
             mOriginalSummary = wimaxCheckBoxPreference.getSummary();
-            wimaxCheckBoxPreference.setPersistent(false);
+            wimaxCheckBoxPreference.setPersistent(true);
 
             mWimaxStatusFilter = new IntentFilter(WIMAX_ENABLED_CHANGED_ACTION);
             mWimaxStatusFilter.addAction(NETWORK_STATE_CHANGED_ACTION);
@@ -155,12 +155,9 @@ public class WimaxEnabler implements Preference.OnPreferenceChangeListener {
                     + getHumanReadableWimaxStatus(wimaxStatus));
         }
 
-	boolean wimaxSavedState = Settings.Secure.getInt(mContext.getContentResolver(),
-            Settings.Secure.WIMAX_ON, 0) == 1;
-
         if (wimaxStatus == WIMAX_ENABLED_STATE_DISABLED
                 || wimaxStatus == WIMAX_ENABLED_STATE_ENABLED) {
-            boolean wimaxEnabled = (wimaxStatus == WIMAX_ENABLED_STATE_ENABLED && wimaxSavedState);
+            boolean wimaxEnabled = (wimaxStatus == WIMAX_ENABLED_STATE_ENABLED);
             mWimaxCheckBoxPref.setChecked(wimaxEnabled);
             mWimaxCheckBoxPref
                     .setSummary(wimaxStatus == WIMAX_ENABLED_STATE_DISABLED ? mOriginalSummary
@@ -169,16 +166,10 @@ public class WimaxEnabler implements Preference.OnPreferenceChangeListener {
             mWimaxCheckBoxPref.setEnabled(isEnabledByDependency());
 
             if (wimaxStatus == WIMAX_ENABLED_STATE_DISABLED) {
-		Settings.Secure.putInt(mContext.getContentResolver(),
-                    Settings.Secure.WIMAX_ON, 0);
                 // mWimaxController.disconnectFromDcs();
                 // ConnectivityManager cManager =
                 // (ConnectivityManager)this.mContext.getSystemService("connectivity");
                 // cManager.resetWimaxService();
-            }
-	    else if (wimaxStatus == WIMAX_ENABLED_STATE_ENABLED) {
-		Settings.Secure.putInt(mContext.getContentResolver(),
-                    Settings.Secure.WIMAX_ON, 1);
             }
 
         } else if (wimaxStatus == WIMAX_ENABLED_STATE_DISABLING
