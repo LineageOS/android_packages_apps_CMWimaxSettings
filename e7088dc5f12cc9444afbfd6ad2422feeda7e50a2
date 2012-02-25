@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAQX//9oI\u003d",
+        "filename": "res/values-nl/strings.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 2597
+      },
+      "writtenOn": "2012-02-25T04:07:16Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAQX//9o8\u003d",
+      "revId": "e7088dc5f12cc9444afbfd6ad2422feeda7e50a2",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAQX//9o4\u003d",
         "filename": "res/values-nl/strings.xml",
         "patchSetId": 1
@@ -30,6 +48,24 @@
       "writtenOn": "2012-02-25T02:50:29Z",
       "side": 1,
       "message": "\"Zoek\" or \"zoeken\"?",
+      "revId": "e7088dc5f12cc9444afbfd6ad2422feeda7e50a2",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAQX//9oE\u003d",
+        "filename": "res/values-nl/strings.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 2597
+      },
+      "writtenOn": "2012-02-25T04:07:16Z",
+      "side": 1,
+      "message": "\"Scan for WiMAX\", so \"zoek\".",
+      "parentUuid": "AAAAQX//9o4\u003d",
       "revId": "e7088dc5f12cc9444afbfd6ad2422feeda7e50a2",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
       "unresolved": false
